@@ -3,7 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { SharedComponent } from './components';
+
+import { ShowAuthedDirective } from './directives';
+
+import { UserService } from './services';
 
 @NgModule({
   imports: [
@@ -14,15 +17,19 @@ import { SharedComponent } from './components';
     RouterModule
   ],
   declarations: [
-    SharedComponent
+    ShowAuthedDirective
+  ],
+  providers: [
+    UserService
   ],
   exports: [
     CommonModule,
+    ShowAuthedDirective,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
     RouterModule,
-    SharedComponent
+    ShowAuthedDirective
   ]
 })
 export class SharedModule {}

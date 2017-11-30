@@ -1,1 +1,2 @@
-export * from './shared.component'
+export * from './email-password.component'
+export * from './image-cropper';
